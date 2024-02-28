@@ -15,8 +15,23 @@ datasource db {
 }
 
 //models
-model Users {
-  address String @id @unique
-  paid Boolean @default(false)
+model newsletter_model {
+  createdDate  DateTime  @id @unique 
+
+  // Columns for Upcoming Events
+  upcomingEvents  String?
+
+  // Columns for What's Up Right Now
+  whatsUpNow      String?
+
+  // Columns for Recommended Reads
+  recommendedReads String?
+
+  // Columns for Shoutouts
+  shoutouts        String?
+
+  // Columns for Subscribers
+  subscribers      String[]
 }
+
 

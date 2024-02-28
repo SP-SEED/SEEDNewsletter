@@ -2,7 +2,13 @@
 
 
 # Passwords
-Cockroach db account: socseednewsletter123
+
 
 
 # Connection String
+
+
+# Prisma 
+packages commands:
+-npm install prisma --save-dev
+-npm install @prisma/client
