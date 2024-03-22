@@ -11,7 +11,7 @@ fetch(FULL_URL)
 .then(res => res.text())
 .then(rep => {
   let data=JSON.parse(rep.substr(47).slice(0,-2));
-
+  
   console.log(data.table.rows[1].c[1].v)
 
   //console.log(data.table.rows[x].c[y].v)

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div>
+      Hello
+      <div id="container">
+        <div></div>
+      </div>
+    </div>
+    <script>
+      const SERVER_URL = "http://localhost:8081";
+
+      async function getData() {
+        let response = await fetch(`${SERVER_URL}/`);
+        let data = await response.json()
+        console.log(data)
+        data['quotes'].map((e) => {
+          console.log(e)
+          return 
+        })
+        for (let quote of data['quotes']) {
+          document.getElementById("container").innerHTML += `<div class='flex gap-2'>
+            <span>${quote['Date']}</span>
+            <span>${quote['Quote']}</span>
+            <span>${quote['Person']}</span>
+            <span>${quote['Position']}</span>
+            </div>`
+        }
+      }
+      getData();
+    </script>
+    
+    <!-- REACT -->
+    <!-- <div>
+      {data['quotes'].map((e) => {
+      console.log(e)
+      return <Potato date={{e['Date']}}>{e['Date']}</Potato>
+      })}
+    </div> -->
+  </body>
+</html>
